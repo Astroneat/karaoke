@@ -14,10 +14,8 @@ pip install requirements.txt
 - Create/Edit `sounds-config.json` in the same directory as `main.py`. Each song is structured as follows:
 ```json
 {
-    /* 
-      Capitalised w/ whitespace is recommended
-      E.g. "As The World Caves In"
-    */
+    // Capitalised w/ whitespace is recommended
+    // E.g. "As The World Caves In"
     "<song-name>": {
         "artist": "<artist-name>",
         "file_name": "<audio-file-name>.<whatever-ext-ur-audio-is>"
