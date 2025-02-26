@@ -12,7 +12,7 @@ pip install requirements.txt
 - Grab yourself a file of the song you want to play and put it in `sounds` folder.
 
 - Create/Edit `sounds-config.json` in the same directory as `main.py`. Each song is structured as follows:
-```json
+```jsonc
 {
     // Capitalised w/ whitespace is recommended
     // E.g. "As The World Caves In"
