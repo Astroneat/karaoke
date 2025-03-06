@@ -12,6 +12,11 @@ python -m venv env
 pip install -r requirements.txt
 ```
 
+- Install FFmpeg
+    - [Windows Tutorial](https://windowsloop.com/install-ffmpeg-windows-10/)
+    - OSX - `brew install ffmpeg`
+    - Linux - `sudo apt install ffmpeg` or use your distro's package manager
+
 ## Usage
 
 - Change `SONG_NAME` in `main.py` to whatever song you want to play, and enjoy!
