@@ -9,12 +9,12 @@ import os
 import subprocess
 
 # ----- Custom configs ----- #
-SONG_NAME = "Duvet"
+SONG_NAME = ""
 
 SEARCH_SONG = False
-SONG_FILE = "sounds/Bôa - Duvet (Lyrics).mp3"
+SONG_FILE = ""
 SEARCH_LYRICS = False
-LYRICS_FILE = "lyrics/Bôa - Duvet (Lyrics).lrc"
+LYRICS_FILE = ""
 
 SEARCH_QUERY_DISPLAY = 5 # how many results to display (if SEARCH_SONG is True)
 
@@ -72,7 +72,7 @@ if SEARCH_SONG:
             '-loglevel', 'error',
             '-n', '-i', audio_file_m4a, audio_file
         ])
-        print(f"Audio downloaded to {os.path.relpath(audio_file)}")
+        print(f"Audio downloaded to \"{os.path.relpath(audio_file)}\"")
         if os.path.isfile(audio_file_m4a): 
             os.remove(audio_file_m4a)
     else:
