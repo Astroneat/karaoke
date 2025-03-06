@@ -11,9 +11,9 @@ import subprocess
 # ----- Custom configs ----- #
 SONG_NAME = ""
 
-SEARCH_SONG = False
+SEARCH_SONG = True
 SONG_FILE = ""
-SEARCH_LYRICS = False
+SEARCH_LYRICS = True
 LYRICS_FILE = ""
 
 SEARCH_QUERY_DISPLAY = 5 # how many results to display (if SEARCH_SONG is True)
@@ -83,6 +83,7 @@ else:
     if os.path.isfile(SONG_FILE):
         print(f"\"{SONG_FILE}\"'s existence verified")
         audio_file = SONG_FILE
+        audio_name = os.path.splitext(os.path.basename(SONG_FILE))[0]
     else:
         raise Exception(f"\"{SONG_FILE}\" not found")
 
@@ -91,7 +92,10 @@ if SEARCH_LYRICS:
     lrc_path = os.path.join('lyrics', f"{audio_name}.lrc")
     if not os.path.isfile(lrc_path):
         print(f"Searching for lyrics of \"{audio_name}\"...")
-        syncedlyrics.search(audio_name, save_path=lrc_path, enhanced=True)
+        try:
+            syncedlyrics.search(audio_name, save_path=lrc_path, enhanced=True)
+        except:
+            raise Exception("Search failed!")
     else:
         print(f"Lyrics for \"{lrc_path}\" already exists in ./lyrics")
 
