@@ -1,3 +1,5 @@
 just_playback==0.1.8
 pylrc==0.1.2
+pytubefix==8.12.2
+rich==13.9.4
 syncedlyrics==1.0.1

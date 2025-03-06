@@ -22,10 +22,7 @@ def basic_parse(lrc_content):
     timestamps = []
     lrc_content = pylrc.parse(lrc_content)
     for line in lrc_content:
-        line_timestamps = []
-        for word in line.text.split(" "):
-            line_timestamps.append((line.time, word))
-        timestamps.append((line.time, line_timestamps))
+        timestamps.append((line.time, [line.time, line.text.strip()]))
     return timestamps
 
 def enhanced_parse(lrc_content):
